@@ -435,7 +435,7 @@ const ADAPTERS = {
        fetchMonthly(env, h, q)-> { months:[...], count:[...] }
   */
   pos: {
-    configured: true,
+    configured: false, /* Arlo: owner chose to leave Impos unconnected for now (Nov 2026). Set true to turn the WhatsApp Daily Insight upload back on. */
     auth: null,
     mode: "export",
     oauth: {},
