@@ -230,6 +230,8 @@ function xeroSplit(rep) {
 function deputyBase(env) {
   let b = String(env.ROSTERING_BASE_URL || "").trim().replace(/\/+$/, "");
   if (b && !/^https?:\/\//i.test(b)) b = "https://" + b;
+  /* keep only https://<install>.<geo>.deputy.com - drops a pasted /#/ or any path */
+  try { if (b) b = new URL(b).origin; } catch (e) {}
   return b;
 }
 function deputyHeaders(env) {
